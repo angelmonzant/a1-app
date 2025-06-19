@@ -1,0 +1,204 @@
+/* ================
+   Variables globales
+   ================ */
+:root {
+  --primary-blue: #0a0f9a;
+  --primary-purple: #5a2af1;
+  --gray-800: #1e1e1e;
+  --gray-500: #6b6b6b;
+  --gray-300: #d1d1d1;
+  --radius-2xl: 16px;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-12: 3rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --shadow-xl: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================
+   Reset y básicos
+   ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f5f6fa;
+  color: var(--gray-800);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===================
+   Contenedor principal
+   =================== */
+.login-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4);
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--primary-purple) 100%
+  );
+}
+
+/* Fondo animado */
+.login-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255,255,255,0.2) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255,255,255,0.2) 1px,
+      transparent 1px
+    );
+  background-size: 50px 50px;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%     { transform: translate(-10px, -10px) rotate(5deg); }
+}
+
+/* ===================
+   Tarjeta de login
+   =================== */
+.login-card {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  padding: var(--spacing-12);
+  width: 100%;
+  max-width: 360px;
+}
+
+/* ===================================
+   Logo circular (placeholder antes
+   de usar tu imagen)
+   =================================== */
+.logo-section .logo {
+  /* tamaño del círculo */
+  width: 80px;
+  height: 80px;
+
+  /* círculo perfecto */
+  border-radius: 50%;
+
+  /* centrado horizontal en su contenedor */
+  margin: 0 auto var(--spacing-4);
+
+  /* fondo y color del texto */
+  background-color: var(--primary-blue);
+  color: #ffffff;
+
+  /* texto centrado vertical y horizontal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* tipografía */
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+.logo-section {
+  text-align: center;  /* Esto centra el <div class="logo">, el <h1> y el <p> */
+}
+
+/* ===================
+   Formulario
+   =================== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+/* Grupo de input + label */
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: var(--font-size-sm);
+  color: var(--gray-800);
+  margin-bottom: 0.5rem;
+}
+
+.input-group input {
+  padding: 0.75rem 1rem;
+  font-size: var(--font-size-md);
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+}
+
+/* Botón principal */
+.btn-primary.login-btn {
+  padding: 0.75rem;
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary.login-btn:hover {
+  background-color: #08126e;
+}
+
+/* Pie del formulario */
+.login-footer {
+  text-align: right;
+  margin-top: var(--spacing-4);
+}
+
+.login-footer a {
+  font-size: var(--font-size-sm);
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* ===================================
+   Mensaje de error en formulario
+   =================================== */
+.error-message {
+  margin-top: 0.75rem;
+  color: #e53e3e;           /* rojo suave */
+  font-size: 0.875rem;      /* 14px */
+  text-align: center;
+}

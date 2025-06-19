@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A1 · Dashboard</title>
+  <!-- Tus estilos globales -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Chequeo de sesión al cargar -->
+  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', requireAuth);
+  </script>
+
+  <!-- Cabecera / Navegación -->
+  <header class="dashboard-header">
+    <nav class="dashboard-nav">
+      <ul>
+        <li><a href="dashboard.html">Inicio</a></li>
+        <li><a href="subscriptions.html">Suscripciones</a></li>
+        <!-- Otras secciones -->
+        <li><a href="#" id="logoutBtn">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="dashboard-main">
+    <h1>Bienvenido/a, <span id="userName"></span></h1>
+    <p>Este es tu panel de control.</p>
+    <!-- Aquí agregas los widgets o secciones que necesites -->
+  </main>
+
+  <!-- Opcional: script para mostrar nombre de usuario -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const userData = sessionStorage.getItem('user');
+      if (userData) {
+        const user = JSON.parse(userData);
+        document.getElementById('userName').textContent = user.name || user.username;
+      }
+    });
+  </script>
+</body>
+</html>
