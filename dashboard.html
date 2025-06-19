@@ -1,47 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A1 · Dashboard</title>
-  <!-- Tus estilos globales -->
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>A1 · Panel Principal</title>
+
+  <!-- Montserrat desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Estilos del Dashboard -->
+  <link rel="stylesheet" href="css/dashboard.css" />
 </head>
 <body>
-  <!-- Chequeo de sesión al cargar -->
-  <script src="js/auth.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', requireAuth);
-  </script>
+  <div class="dashboard-screen">
+    <!-- HEADER -->
+    <header class="dashboard-header">
+      <div class="top-bar">
+        <div class="logo-container">
+          <img src="assets/images/logo.png" alt="Logo A1" />
+        </div>
+        <h2 class="panel-title">Panel Principal</h2>
+        <div class="user-icon">
+          <!-- Reemplaza con tu SVG/PNG -->
+          <img src="assets/images/icon-user.svg" alt="Usuario" />
+        </div>
+      </div>
+      <div class="greeting-bar">
+        <h3 class="greeting">Hola, ¿qué haremos hoy por ti?</h3>
+        <a href="new-diffusion.html" class="btn-new-diffusion">
+          Nueva Difusión
+        </a>
+      </div>
+    </header>
 
-  <!-- Cabecera / Navegación -->
-  <header class="dashboard-header">
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+      <!-- CAMPAÑAS -->
+      <section class="campaigns-section">
+        <h4 class="section-title">Campañas</h4>
+        <div class="tabs">
+          <button class="tab-button active">Hoy</button>
+          <button class="tab-button">Esta semana</button>
+          <button class="tab-button">Este mes</button>
+          <button class="tab-button">Próximo mes</button>
+        </div>
+        <div class="campaign-list">
+          <!-- tarjeta campaña -->
+          <div class="campaign-card">
+            <img
+              src="assets/images/campaign-image1.jpg"
+              alt="Campaña WhatsApp"
+            />
+            <div class="campaign-details">
+              <h5>Campaña de Rebajas 3×1</h5>
+              <p>
+                Envía ofertas irresistibles en calzado y aumenta tus ventas.
+              </p>
+              <div class="campaign-date">
+                <img
+                  src="assets/images/icon-calendar.svg"
+                  alt="Fecha"
+                />
+                <span>20 Febrero, 2020 · 10:00 – 13:00</span>
+              </div>
+            </div>
+          </div>
+          <div class="campaign-card">
+            <img
+              src="assets/images/campaign-image2.jpg"
+              alt="Campaña Verano"
+            />
+            <div class="campaign-details">
+              <h5>Promoción de Verano</h5>
+              <p>
+                Llega a tus clientes con descuentos exclusivos de temporada.
+              </p>
+              <div class="campaign-date">
+                <img
+                  src="assets/images/icon-calendar.svg"
+                  alt="Fecha"
+                />
+                <span>22 Febrero, 2020 · 09:00 – 12:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICIOS -->
+      <section class="services-section">
+        <div class="service-card whatsapp">
+          <p class="service-text">
+            Envía campañas masivas segmentadas vía WhatsApp Marketing.
+          </p>
+          <span class="service-label">WhatsApp</span>
+        </div>
+        <div class="service-card chatbot">
+          <p class="service-text">
+            Automatiza tu atención al cliente con nuestro Chatbot IA.
+          </p>
+          <span class="service-label">Chatbot IA</span>
+        </div>
+      </section>
+    </main>
+
+    <!-- NAVBAR INFERIOR -->
     <nav class="dashboard-nav">
-      <ul>
-        <li><a href="dashboard.html">Inicio</a></li>
-        <li><a href="subscriptions.html">Suscripciones</a></li>
-        <!-- Otras secciones -->
-        <li><a href="#" id="logoutBtn">Cerrar sesión</a></li>
-      </ul>
+      <div class="nav-item active">
+        <div class="nav-icon">
+          <!-- SVG Inicio -->
+          <img src="assets/images/icon-home.svg" alt="Inicio" />
+        </div>
+        <span class="nav-label">Inicio</span>
+      </div>
+      <div class="nav-item">
+        <div class="nav-icon">
+          <!-- SVG AI Chat -->
+          <img src="assets/images/icon-chat.svg" alt="AI Chat" />
+        </div>
+        <span class="nav-label">AI chat</span>
+      </div>
+      <div class="nav-item">
+        <div class="nav-icon">
+          <!-- SVG Marketing -->
+          <img src="assets/images/icon-marketing.svg" alt="Marketing" />
+        </div>
+        <span class="nav-label">Marketing</span>
+      </div>
+      <div class="nav-item">
+        <div class="nav-icon">
+          <!-- SVG Inventario -->
+          <img src="assets/images/icon-inventory.svg" alt="Inventario" />
+        </div>
+        <span class="nav-label">Inventario</span>
+      </div>
     </nav>
-  </header>
-
-  <!-- Contenido principal -->
-  <main class="dashboard-main">
-    <h1>Bienvenido/a, <span id="userName"></span></h1>
-    <p>Este es tu panel de control.</p>
-    <!-- Aquí agregas los widgets o secciones que necesites -->
-  </main>
-
-  <!-- Opcional: script para mostrar nombre de usuario -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const userData = sessionStorage.getItem('user');
-      if (userData) {
-        const user = JSON.parse(userData);
-        document.getElementById('userName').textContent = user.name || user.username;
-      }
-    });
-  </script>
+  </div>
+  <script src="js/dashboard.js"></script>
 </body>
 </html>
