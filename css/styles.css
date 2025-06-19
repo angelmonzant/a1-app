@@ -99,32 +99,25 @@ body {
 }
 
 /* ===================================
-   Logo circular (placeholder antes
-   de usar tu imagen)
+   Logo circular (ahora con img)
    =================================== */
 .logo-section .logo {
-  /* tamaño del círculo */
   width: 80px;
   height: 80px;
-
-  /* círculo perfecto */
   border-radius: 50%;
-
-  /* centrado horizontal en su contenedor */
   margin: 0 auto var(--spacing-4);
-
-  /* fondo y color del texto */
-  background-color: var(--primary-blue);
-  color: #ffffff;
-
-  /* texto centrado vertical y horizontal */
+  overflow: hidden;            /* recorta la img al círculo */
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  /* tipografía */
-  font-size: var(--font-size-xl);
-  font-weight: 700;
+.logo-section .logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;         /* mantiene proporción dentro del círculo */
 }
 
 .logo-section {
