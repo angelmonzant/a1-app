@@ -24,79 +24,37 @@
   <div class="dashboard-screen">
     <!-- HEADER -->
     <header class="dashboard-header">
-      <div class="top-bar">
-        <div class="logo-container">
-          <img src="assets/images/logo.png" alt="Logo A1" />
-        </div>
-        <h2 class="panel-title">Panel Principal</h2>
-        <div class="user-icon">
-          <!-- Reemplaza con tu SVG/PNG -->
-          <img src="assets/images/icon-user.svg" alt="Usuario" />
-        </div>
-      </div>
-      <div class="greeting-bar">
-        <h3 class="greeting">Hola, ¿qué haremos hoy por ti?</h3>
-        <a href="new-diffusion.html" class="btn-new-diffusion">
-          Nueva Difusión
-        </a>
-      </div>
-    </header>
+  <div class="top-bar">
+    <!-- Logo de la plataforma A1 -->
+    <div class="logo-container">
+      <img src="assets/images/logo.png" alt="Logo A1" />
+    </div>
+
+    <!-- Logo del negocio al lado -->
+    <div class="business-logo-container">
+      <img src="assets/images/business-logo.png" alt="Logo Negocio" />
+    </div>
+
+    <h2 class="panel-title">Panel Principal</h2>
+
+    <!-- Icono de usuario -->
+    <div class="user-icon">
+      <img src="assets/images/icon-user.svg" alt="Usuario" />
+    </div>
+  </div>
+
+  <!-- Resto del contenido -->
+  <div class="greeting-bar">
+    <h3 class="greeting">Hola, ¿qué haremos hoy por ti?</h3>
+    <a href="new-diffusion.html" class="btn-new-diffusion">
+      Nueva Difusión
+    </a>
+  </div>
+</header>
 
     <!-- MAIN CONTENT -->
     <main class="dashboard-main">
-      <!-- CAMPAÑAS -->
-      <section class="campaigns-section">
-        <h4 class="section-title">Campañas</h4>
-        <div class="tabs">
-          <button class="tab-button active">Hoy</button>
-          <button class="tab-button">Esta semana</button>
-          <button class="tab-button">Este mes</button>
-          <button class="tab-button">Próximo mes</button>
-        </div>
-        <div class="campaign-list">
-          <!-- tarjeta campaña -->
-          <div class="campaign-card">
-            <img
-              src="assets/images/campaign-image1.jpg"
-              alt="Campaña WhatsApp"
-            />
-            <div class="campaign-details">
-              <h5>Campaña de Rebajas 3×1</h5>
-              <p>
-                Envía ofertas irresistibles en calzado y aumenta tus ventas.
-              </p>
-              <div class="campaign-date">
-                <img
-                  src="assets/images/icon-calendar.svg"
-                  alt="Fecha"
-                />
-                <span>20 Febrero, 2020 · 10:00 – 13:00</span>
-              </div>
-            </div>
-          </div>
-          <div class="campaign-card">
-            <img
-              src="assets/images/campaign-image2.jpg"
-              alt="Campaña Verano"
-            />
-            <div class="campaign-details">
-              <h5>Promoción de Verano</h5>
-              <p>
-                Llega a tus clientes con descuentos exclusivos de temporada.
-              </p>
-              <div class="campaign-date">
-                <img
-                  src="assets/images/icon-calendar.svg"
-                  alt="Fecha"
-                />
-                <span>22 Febrero, 2020 · 09:00 – 12:00</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SERVICIOS -->
+      <!-- Sección de los Servicios (arriba) -->
       <section class="services-section">
         <div class="service-card whatsapp">
           <p class="service-text">
@@ -111,39 +69,200 @@
           <span class="service-label">Chatbot IA</span>
         </div>
       </section>
+
+      <!-- Sección de Campañas y Cobranza -->
+      <div class="campaign-cobranza-container">
+        <!-- Campañas -->
+        <section class="campaigns-section">
+          <h4 class="section-title">Campañas</h4>
+          <div class="tabs">
+            <button class="tab-button active">Hoy</button>
+            <button class="tab-button">Esta semana</button>
+            <button class="tab-button">Este mes</button>
+            <button class="tab-button">Próximo mes</button>
+          </div>
+
+          <div class="campaign-list">
+            <div class="campaign-card">
+              <img
+                src="assets/images/campaign-image1.jpg"
+                alt="Campaña WhatsApp"
+              />
+              <div class="campaign-details">
+                <h5>Campaña de Rebajas 3×1</h5>
+                <p>
+                  Envía ofertas irresistibles en calzado y aumenta tus ventas.
+                </p>
+                <div class="campaign-date">
+                  <img
+                    src="assets/images/icon-calendar.svg"
+                    alt="Fecha"
+                  />
+                  <span>20 Febrero, 2020 · 10:00 – 13:00</span>
+                </div>
+              </div>
+            </div>
+            <div class="campaign-card">
+              <img
+                src="assets/images/campaign-image2.jpg"
+                alt="Campaña Verano"
+              />
+              <div class="campaign-details">
+                <h5>Promoción de Verano</h5>
+                <p>
+                  Llega a tus clientes con descuentos exclusivos de temporada.
+                </p>
+                <div class="campaign-date">
+                  <img
+                    src="assets/images/icon-calendar.svg"
+                    alt="Fecha"
+                  />
+                  <span>22 Febrero, 2020 · 09:00 – 12:00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cobranza -->
+        <section class="cobranza-section">
+          <h4 class="section-title">Cobranza</h4>
+          <div class="tabs">
+            <button class="tab-button active">Hoy</button>
+            <button class="tab-button">Esta semana</button>
+            <button class="tab-button">Este mes</button>
+            <button class="tab-button">Próximo mes</button>
+          </div>
+
+          <div class="contacts-list">
+            <!-- Contacto de cliente -->
+            <div class="contact-card">
+              <div class="contact-info">
+                <img
+                  src="assets/images/contact1.jpg"
+                  alt="Cliente 1"
+                  class="contact-image"
+                />
+                <div>
+                  <h5 class="contact-name">Juan Pérez</h5>
+                  <p class="contact-message">Recordatorio de pago pendiente</p>
+                </div>
+              </div>
+              <span class="contact-date">Fecha: 25 Febrero, 2025</span>
+            </div>
+            <!-- Agregar más contactos de clientes -->
+            <div class="contact-card">
+              <div class="contact-info">
+                <img
+                  src="assets/images/contact2.jpg"
+                  alt="Cliente 2"
+                  class="contact-image"
+                />
+                <div>
+                  <h5 class="contact-name">Ana Gómez</h5>
+                  <p class="contact-message">Recordatorio de pago pendiente</p>
+                </div>
+              </div>
+              <span class="contact-date">Fecha: 27 Febrero, 2025</span>
+            </div>
+             <!-- Agregar más contactos de clientes -->
+            <div class="contact-card">
+              <div class="contact-info">
+                <img
+                  src="assets/images/contact2.jpg"
+                  alt="Cliente 2"
+                  class="contact-image"
+                />
+                <div>
+                  <h5 class="contact-name">Andrea Monzant</h5>
+                  <p class="contact-message">Recordatorio de pago pendiente</p>
+                </div>
+              </div>
+              <span class="contact-date">Fecha: 27 Febrero, 2025</span>
+            </div>
+             <!-- Agregar más contactos de clientes -->
+            <div class="contact-card">
+              <div class="contact-info">
+                <img
+                  src="assets/images/contact1.jpg"
+                  alt="Cliente 2"
+                  class="contact-image"
+                />
+                <div>
+                  <h5 class="contact-name">Kleiver Diaz</h5>
+                  <p class="contact-message">Recordatorio de pago pendiente</p>
+                </div>
+              </div>
+              <span class="contact-date">Fecha: 27 Febrero, 2025</span>
+            </div>
+            <!-- Agregar más contactos de clientes -->
+            <div class="contact-card">
+              <div class="contact-info">
+                <img
+                  src="assets/images/contact2.jpg"
+                  alt="Cliente 2"
+                  class="contact-image"
+                />
+                <div>
+                  <h5 class="contact-name">Doris Diaz</h5>
+                  <p class="contact-message">Recordatorio de pago pendiente</p>
+                </div>
+              </div>
+              <span class="contact-date">Fecha: 27 Febrero, 2025</span>
+            </div>
+            <!-- Repetir hasta tener 10 contactos -->
+          </div>
+        </section>
+      </div>
     </main>
 
-    <!-- NAVBAR INFERIOR -->
-    <nav class="dashboard-nav">
-      <div class="nav-item active">
-        <div class="nav-icon">
-          <!-- SVG Inicio -->
-          <img src="assets/images/icon-home.svg" alt="Inicio" />
-        </div>
-        <span class="nav-label">Inicio</span>
-      </div>
-      <div class="nav-item">
-        <div class="nav-icon">
-          <!-- SVG AI Chat -->
-          <img src="assets/images/icon-chat.svg" alt="AI Chat" />
-        </div>
-        <span class="nav-label">AI chat</span>
-      </div>
-      <div class="nav-item">
-        <div class="nav-icon">
-          <!-- SVG Marketing -->
-          <img src="assets/images/icon-marketing.svg" alt="Marketing" />
-        </div>
-        <span class="nav-label">Marketing</span>
-      </div>
-      <div class="nav-item">
-        <div class="nav-icon">
-          <!-- SVG Inventario -->
-          <img src="assets/images/icon-inventory.svg" alt="Inventario" />
-        </div>
-        <span class="nav-label">Inventario</span>
-      </div>
-    </nav>
+   <nav class="dashboard-nav">
+  <!-- Inicio -->
+  <div class="nav-item active">
+    <div class="nav-icon">
+      <!-- Ícono SVG de inicio -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M12 3L2 12h3v7h5v-4h2v4h5v-7h3L12 3z"/>
+      </svg>
+    </div>
+    <span class="nav-label">Inicio</span>
+  </div>
+
+  <!-- AI Chat -->
+  <div class="nav-item">
+    <div class="nav-icon">
+      <!-- Ícono SVG de AI Chat -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M4 4h16v12H4z"/>
+      </svg>
+    </div>
+    <span class="nav-label">AI Chat</span>
+  </div>
+
+  <!-- Marketing -->
+  <div class="nav-item">
+    <div class="nav-icon">
+      <!-- Ícono SVG de Marketing -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M3 3h18v18H3z"/>
+      </svg>
+    </div>
+    <span class="nav-label">Marketing</span>
+  </div>
+
+  <!-- Inventario -->
+  <div class="nav-item">
+    <div class="nav-icon">
+      <!-- Ícono SVG de Inventario -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M6 6h12v12H6z"/>
+      </svg>
+    </div>
+    <span class="nav-label">Inventario</span>
+  </div>
+</nav>
+
+
   </div>
   <script src="js/dashboard.js"></script>
 </body>

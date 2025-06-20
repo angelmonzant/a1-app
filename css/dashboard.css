@@ -1,10 +1,10 @@
 :root {
-  --bg-dark: #121212;
-  --card-dark: #1f1f1f;
+  --bg-dark: #F6F7FB;
+  --card-dark: #afd2fd;
   --white: #ffffff;
-  --gray: #888888;
-  --red: #ff3b3b;
-  --purple: #5a2af1;
+  --gray: #2c2c2c;
+  --red: #02F971;
+  --purple: #0074FE;
   --radius-lg: 16px;
   --radius-pill: 30px;
   --spacing-sm: 8px;
@@ -43,28 +43,46 @@ body {
   padding: var(--spacing-md);
 }
 
-/* Top bar: logo + título + usuario */
+/* Contenedor para los dos logos en el header */
 .top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo-container img,
-.user-icon img {
-  width: 24px;
-  height: 24px;
+/* Logo de la plataforma A1 */
+.logo-container img {
+  width: 60px;
+  height: auto;
 }
 
+/* Logo del negocio al lado */
+.business-logo-container img {
+  width: 60px;  /* Ajusta el tamaño según sea necesario */
+  height: auto;
+  margin-left: 20px;  /* Espacio entre los dos logos */
+}
+
+/* Título del panel */
 .panel-title {
   font-size: var(--font-lg);
+  color: #2c2c2c;
   font-weight: 600;
+  margin-left: 20px;  /* Ajusta según la distancia que desees */
+}
+
+/* Icono de usuario */
+.user-icon img {
+  width: 24px;
+  height: 24px; 
+  color: #000000;
 }
 
 /* Greeting + botón */
 .greeting-bar {
   text-align: center;
   margin-top: var(--spacing-md);
+  color: #2c2c2c;
 }
 
 .greeting {
@@ -77,8 +95,8 @@ body {
 .btn-new-diffusion {
   display: inline-block;
   padding: var(--spacing-sm) var(--spacing-lg);
-  background: var(--white);
-  color: var(--red);
+  background: #02F971;
+  color: #2C2430;
   border-radius: var(--radius-pill);
   font-size: var(--font-lg);
   font-weight: 600;
@@ -92,11 +110,61 @@ body {
   padding: 0 var(--spacing-md) var(--spacing-lg); /* deja espacio para navbar fija */
 }
 
+/* SECCIÓN SERVICIOS */
+.services-section {
+  display: flex;
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+}
+
+.service-card {
+  flex: 1;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120px;
+}
+
+.service-text {
+  font-size: var(--font-base);
+  line-height: 1.4;
+}
+
+.service-label {
+  display: inline-block;
+  margin-top: var(--spacing-sm);
+  padding: 4px 12px;
+  background: var(--white);
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Colores de cada servicio */
+.service-card.whatsapp {
+  background: var(--red);
+}
+
+.service-card.chatbot {
+  background: var(--purple);
+}
+
+.service-card.whatsapp .service-label {
+  color: var(--red);
+}
+
+.service-card.chatbot .service-label {
+  color: var(--purple);
+}
+
 /* SECCIÓN CAMPAÑAS */
 .section-title {
   font-size: var(--font-lg);
   font-weight: 600;
   margin-bottom: var(--spacing-sm);
+  color: #2c2c2c;
 }
 
 .tabs {
@@ -116,7 +184,8 @@ body {
 }
 
 .tab-button.active {
-  color: var(--white);
+  color: black;
+  font-weight: 600;
 }
 
 /* Lista de campañas */
@@ -171,62 +240,60 @@ body {
   margin-right: 4px;
 }
 
-/* SECCIÓN SERVICIOS */
-.services-section {
-  display: flex;
-  gap: var(--spacing-md);
-  margin: var(--spacing-lg) 0;
+/* SECCIÓN COBRANZA */
+.cobranza-section {
+  margin-top: var(--spacing-lg);
 }
 
-.service-card {
-  flex: 1;
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-md);
+.contacts-list {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.contact-card {
+  display: flex;
   justify-content: space-between;
-  min-height: 120px;
+  background: var(--card-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
 }
 
-.service-text {
-  font-size: var(--font-base);
-  line-height: 1.4;
+.contact-info {
+  display: flex;
+  gap: var(--spacing-sm);
 }
 
-.service-label {
-  display: inline-block;
-  margin-top: var(--spacing-sm);
-  padding: 4px 12px;
-  background: var(--white);
-  border-radius: var(--radius-pill);
-  font-size: 12px;
+.contact-info .contact-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contact-info .contact-name {
   font-weight: 600;
+  color: #2c2c2c;
 }
 
-/* Colores de cada servicio */
-.service-card.whatsapp {
-  background: var(--red);
+.contact-info .contact-message {
+  font-size: 12px;
+  color: var(--gray);
 }
 
-.service-card.chatbot {
-  background: var(--purple);
+.contact-date {
+  font-size: 12px;
+  color: var(--gray);
 }
 
-.service-card.whatsapp .service-label {
-  color: var(--red);
-}
-
-.service-card.chatbot .service-label {
-  color: var(--purple);
-}
-
-/* NAVBAR INFERIOR FIJA */
+/* NAVBAR INFERIOR FIJA CON DESENFOQUE */
 .dashboard-nav {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--white);
+  background: rgba(0, 0, 0, 0.5);  /* Fondo semi-transparente */
+  backdrop-filter: blur(10px);      /* Efecto de desenfoque */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -237,32 +304,41 @@ body {
   z-index: 20;
 }
 
-/* Cada ítem */
+/* Cada ítem de la navbar */
 .nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #c4c4c4;
+
   padding: 8px;
   border-radius: 12px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+/* Cambio de color cuando está activo */
 .nav-item.active {
   background: var(--red);
 }
 
-.nav-icon img {
+/* Íconos SVG (blanco para todos los íconos) */
+.nav-icon svg {
   width: 24px;
   height: 24px;
+  fill: #ffffff;  /* Cambiar los íconos a blanco */
 }
 
 .nav-label {
   margin-top: 4px;
   font-size: 12px;
-  color: #555;
+  color: #ffffff;
 }
 
 .nav-item.active .nav-label {
-  color: var(--red);
+  color: var(--white);
+}
+
+/* Estilo hover para los íconos */
+.nav-item:hover .nav-icon svg {
+  fill: #ffffff; /* Blanco */
 }
